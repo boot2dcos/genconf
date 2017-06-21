@@ -1,0 +1,8 @@
+version: '3.2'
+services:
+  boot2dcos-genconf:
+    image: boot2dcos/genconf:1.9.0
+    build:
+      context: .
+      args:
+        - DCOS_INSTALLER_URL=${DCOS_INSTALLER_URL:-https://downloads.dcos.io/dcos/stable/commit/0ce03387884523f02624d3fb56c7fbe2e06e181b/dcos_generate_config.sh} 

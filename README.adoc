@@ -1,0 +1,48 @@
+// Settings:
+:idprefix:
+:idseparator: -
+ifndef::env-github[:icons: font]
+ifdef::env-github,env-browser[]
+:toc: macro
+:toclevels: 1
+endif::[]
+ifdef::env-github[]
+:status:
+:outfilesuffix: .adoc
+:!toc-title:
+:caution-caption: :fire:
+:important-caption: :exclamation:
+:note-caption: :paperclip:
+:tip-caption: :bulb:
+:warning-caption: :warning:
+endif::[]
+// URIs:
+:uri-project: https://github.com/boot2dcos
+:uri-project-repo: {uri-project}/{project-name}
+:uri-project-issues: {uri-project-repo}/issues
+
+// Aliases:
+:project-name: genconf
+:description: A configuration generator for DC/OS
+
+= {project-name}: {description}
+Jauffrey Flach <https://github.com/jauffrey[@jauffrey]>; Benjamin Vouillaume <https://github.com/vbenji[@vbenji]>
+
+
+ifdef::status[]
+image:https://img.shields.io/badge/license-Apache%202.0-blue.svg[Apache 2.0 License, link=#copyright]
+endif::[]
+
+== genconf
+The DCOS configuration generator module runs in a docker container and generates your configuration on a specific volume.
+
+== Authors
+
+{project-name} was written by https://github.com/jauffrey[Jauffrey Flach] and https://github.com/vbenji[Benjamin Vouillaume].
+
+== Copyright
+
+Copyright (C) 2017 The boot2dcos Project. 
+
+For the full text of the license, see the <<LICENSE#,LICENSE>> file.
+Refer to the <<NOTICE#,NOTICE>> file for information about third-party Open Source software in use.
