@@ -13,7 +13,6 @@ RUN set -ex; \
 	rmdir docker; \
     rm docker.tgz;
 
-# ADD $DCOS_INSTALLER_URL /boot2dcos/$DCOS_GENERATE_CONFIG_SH
 # Tweak DCOS install script to use the shared volume boot2dcos_genconf
 RUN set -ex; \
 	mkdir /boot2dcos; \
