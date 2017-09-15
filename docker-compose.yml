@@ -1,8 +1,17 @@
 version: '3.2'
 services:
   boot2dcos-genconf:
-    image: boot2dcos/genconf:1.9.0
+    image: boot2dcos/genconf:${DCOS_VERSION}
     build:
       context: .
       args:
-        - DCOS_INSTALLER_URL=${DCOS_INSTALLER_URL:-https://downloads.dcos.io/dcos/stable/commit/0ce03387884523f02624d3fb56c7fbe2e06e181b/dcos_generate_config.sh} 
+        - DCOS_INSTALLER_URL=https://downloads.dcos.io/dcos/stable/${DCOS_VERSION}/dcos_generate_config.sh
+        - DOCKER_TGZ_URL=${DOCKER_TGZ_URL:-https://get.docker.com/builds/Linux/x86_64/docker-17.05.0-ce.tgz}
+    depends_on: 
+      - squid
+  squid:
+    image: sameersbn/squid:3.3.8-23
+    ports:
+      - "3128:3128"
+    volumes:
+      - /srv/docker/squid/cache:/var/spool/squid3
